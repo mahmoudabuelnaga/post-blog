@@ -1,0 +1,12 @@
+{% extends "base.html" %} {% block 'title' %} {{post.title}} {% endblock %} {% block content %}
+<div class="col-12 my-3">
+    <div class="card" style="width: 100%;border-radius: 5%">
+        <img src="{{post.img.url}}" style="border-radius: 5%" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{post.title}}</h5>
+            <p class="card-text">{{post.body|linebreaks}}</p>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,19 @@
+{% extends "base.html" %} {% block title %} Blog {% endblock %} {% block content %} {% for post in posts %}
+
+
+<div class="col-4 mr-auto my-3">
+
+    <div class="card" style="width: 18rem;">
+        <img src="{{post.img.url}}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{post.title}}</h5>
+            <p class="card-text">{{post.body|truncatewords:20|linebreaks}}</p>
+            <a href="{{post.get_absolute_url}}" class="btn btn-dark">Go somewhere</a>
+        </div>
+    </div>
+</div>
+{% endfor %}
+<div class="container">
+    {% include "snippets/pagination.html" %}
+</div>
+{% endblock content %}
